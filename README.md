@@ -1,4 +1,5 @@
-Slate is a comprehensive self-hosted screen streaming web application designed for Android and Linux devices. Built on top of WebRTC technology, it allows you to view and control your devices remotely through a standard web browser. The application is highly versatile, running on various architectures including amd64 and arm64, and supports host platforms such as Android Termux, Linux, Windows, and MacOS.
+# Slates
+Slates is a comprehensive self-hosted screen streaming web application designed for Android and Linux devices. Built on top of WebRTC technology, it allows you to view and control your devices remotely through a standard web browser. The application is highly versatile, running on various architectures including amd64 and arm64, and supports host platforms such as Android Termux, Linux, Windows, and MacOS.
 
 When connected to Android devices, Slate offers an extensive set of features. You can stream both video and audio seamlessly. It provides full device control, including multi-finger touch and pressure support. Additionally, it synchronizes the clipboard between your device and the browser, and supports UHID peripherals like mice, keyboards, and gamepads. It handles multiple simultaneous connections and utilizes high-efficiency video coding such as H.264 and H.265.
 
