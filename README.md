@@ -1,14 +1,18 @@
 # Slates
 Slates is a comprehensive self-hosted screen streaming web application designed for Android and Linux devices. Built on top of WebRTC technology, it allows you to view and control your devices remotely through a standard web browser. The application is highly versatile, running on various architectures including amd64 and arm64, and supports host platforms such as Android Termux, Linux, Windows, and MacOS.
-
+## Target OS
+### Android
 When connected to Android devices, Slate offers an extensive set of features. You can stream both video and audio seamlessly. It provides full device control, including multi-finger touch and pressure support. Additionally, it synchronizes the clipboard between your device and the browser, and supports UHID peripherals like mice, keyboards, and gamepads. It handles multiple simultaneous connections and utilizes high-efficiency video coding such as H.264 and H.265.
-
+### Linux
 For Linux environments, the application supports streaming through Xvfb, Xorg, or Sway. Features on Linux include high-quality video streaming and control, touch support, and GPU acceleration for Xorg and Sway environments. Like the Android implementation, it also supports H.264 and H.265 video compression to ensure a smooth and responsive streaming experience.
 
+## Prerequisites
 Before using the application, there are a few prerequisites. On the server side, you need to have adb installed in your system path. If you intend to stream a Linux display, you will also need tools like xvfb, ffmpeg, xfce4, sway, or wf-recorder depending on your specific display server setup. On the client side, you simply need a modern web browser that supports WebRTC with H.264 High Profile or H.265 Main Profile.
 
+## Usage
+### General Execution(Server)
 Using Slate is straightforward. You can execute the standalone program directly. By default, the server runs on port 8079 and requires a six-digit PIN for security, which defaults to 123456. You can customize these settings using command line arguments to specify the host IP, a custom port, and a custom PIN. Once the server is running, simply navigate to the host IP and port in your web browser. If you prefer to build the application from source, you can do so using the Go compiler. When compiling on Termux, specific linker flags are required to bypass certain checks.
-
+### Docker 
 Docker deployment is also fully supported and comes in two variations. The lite version is perfect for basic setups, requiring host network mode and privileged access to handle USB bus devices. The full version includes a complete Linux desktop environment, which requires additional volume mounts for input devices and direct GPU access. Using the host network mode is strongly recommended for both Docker setups to ensure UDP traffic for WebRTC routes correctly without networking issues.
-
+## +
 When connecting an Android device for the first time, you may need to pair it using wireless debugging and a pairing code. Once paired, you can initiate the connection from the web interface. In some cases, after starting the stream, you might need to manually trigger a screen update on the device, such as pressing a physical volume button, to initialize the video feed. If you encounter crashes on custom Android devices related to media codecs, it is often due to the default H.264 High Profile setting, which can be resolved by adjusting the video codec profile in the settings.
